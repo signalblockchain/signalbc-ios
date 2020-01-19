@@ -39,7 +39,7 @@ class AppUpdateNag: NSObject {
             self.versionService.fetchLatestVersion(lookupURL: lookupURL)
         }.done { appStoreRecord in
             guard appStoreRecord.version.compare(currentVersion, options: .numeric) == ComparisonResult.orderedDescending else {
-                Logger.debug("remote version: \(appStoreRecord) is not newer than currentVersion: \(currentVersion)")
+                Logger.debug("remote version is not newer than currentVersion: \(currentVersion)")
                 return
             }
 
