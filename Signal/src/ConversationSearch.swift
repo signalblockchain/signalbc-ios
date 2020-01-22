@@ -256,6 +256,8 @@ public class SearchResultsBar: UIToolbar {
         if let resultSet = resultSet {
             if resultSet.messages.count > 0 {
                 currentIndex = min(currentIndex ?? 0, resultSet.messages.count - 1)
+            } else if  resultSet.messages.count == 0 {
+                currentIndex = 0
             } else {
                 currentIndex = nil
             }
